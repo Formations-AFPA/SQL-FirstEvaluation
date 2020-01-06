@@ -28,14 +28,14 @@ CREATE TABLE produit (
 	PRIMARY KEY (pro_num));
 	
 CREATE TABLE `client` (
-	cli_num		INT, 
+	cli_num		INT AUTO_INCREMENT, 
 	cli_nom		VARCHAR(50),
 	cli_adres	VARCHAR(50), 
 	cli_tel		VARCHAR(30),
 	PRIMARY KEY (cli_num));
 
 CREATE TABLE commande (
-	com_num			INT, 
+	com_num			INT AUTO_INCREMENT, 
 	com_cli_num		INT,
 	com_date		DATETIME,
 	com_obs			VARCHAR(50),
@@ -55,3 +55,13 @@ CREATE TABLE vente (
 /* Creation d'un index sur cli_nom */
 CREATE INDEX NomClient
 ON `client`(`cli_nom`);
+
+
+/* Exemple d'insert (Bonus) */
+/*
+INSERT INTO produit (pro_num, pro_lib, pro_desc)
+VALUE 
+(1, 'Savon', 'A l'huile d'olives),
+(2, 'Éponge', 'Grattantes'),
+(3, 'Serviettes', 'En laine');
+*/
